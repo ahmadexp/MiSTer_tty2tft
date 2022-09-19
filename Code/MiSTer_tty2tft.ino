@@ -22,6 +22,7 @@ String BuildVersion = "220914";
 
 // SD card access
 #define SD_CS 5														// IMPORTANT
+// #define SD_CS 17													// use for Adafruit 2.8 SPI based shields
 #include <SD.h>
 #include <FS.h>
 File filehandle;
@@ -45,10 +46,13 @@ File32 filehandle;
 #include <U8g2lib.h>
 #include <Arduino_GFX_Library.h>											// Hardware-specific library
 Arduino_DataBus *bus = new Arduino_ESP32PAR8(15 /* DC */, 33 /* CS */, 4 /* WR */, 2 /* RD */, 12 /* D0 */, 13 /* D1 */, 26 /* D2 */, 25 /* D3 */, 17 /* D4 */, 16 /* D5 */, 27 /* D6 */, 14 /* D7 */);
+// Arduino_DataBus *bus = new Arduino_ESP32SPI(13 /* DC */, 5 /* CS */, 18 /* SCK */, 23 /* MOSI */, 19 /* MISO */, VSPI /* spi_num */); //Use for Adafruit 2.8 SPI TFT Display
+
 //
 // Enable the corresponding display type here. ONLY ONE possible.
 //
-// Arduino_GFX *gfx = new Arduino_ILI9341(bus, 32 /* RST */, 1 /* rotation */, false /* IPS */);
+// Arduino_GFX *gfx = new Arduino_ILI9341(bus, 32 /* RST */, 1 /* rotation */, false /* IPS */); // Use for Parallel based shields
+// Arduino_GFX *gfx = new Arduino_ILI9341(bus, 12 /* RST */, 1 /* rotation */, false /* IPS */); // Use for Adafruit 2.8 SPI based shields
 // Arduino_GFX *gfx = new Arduino_ILI9481_18bit(bus, 32 /* RST */, 1 /* rotation */, false /* IPS */);
 // Arduino_GFX *gfx = new Arduino_ILI9486(bus, 32 /* RST */, 1 /* rotation */, false /* IPS */);
 // Arduino_GFX *gfx = new Arduino_ILI9488(bus, 32 /* RST */, 1 /* rotation */, false /* IPS */);
