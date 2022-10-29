@@ -6,6 +6,7 @@
 // CronAlarms			https://github.com/Martin-Laclaustra/CronAlarms
 // U8g2				https://github.com/olikraus/u8g2
 // ftpsrv			https://github.com/schreibfaul1/ESP32FTPServer
+// FT6206 (for the touch)	https://github.com/adafruit/Adafruit_FT6206_Library
 //
 // edit JPEGDEC.h and change the values of
 // JPEG_FILE_BUF_SIZE and MAX_BUFFERED_PIXELS to 4096
